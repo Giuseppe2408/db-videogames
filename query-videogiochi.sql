@@ -159,6 +159,12 @@
 --WHERE videogames.release_date > '01/01/2020';
 
 --5- Selezionare i premi ricevuti da ogni software house per i videogiochi che ha prodotto (55)
+	SELECT software_houses.name, awards.id, awards.name
+	FROM software_houses
+	INNER JOIN videogames ON software_houses.id = software_house_id
+	INNER JOIN award_videogame ON videogames.id = videogame_id
+	INNER JOIN awards ON awards.id = award_id;
+
 
 --6- Selezionare categorie e classificazioni PEGI dei videogiochi che hanno ricevuto recensioni da 4 e 5 stelle, mostrandole una sola volta (3363)
 
